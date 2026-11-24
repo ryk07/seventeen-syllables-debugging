@@ -26,6 +26,10 @@ HAIKU = (
     "guess the bug was me\n"
 )
 
+# The gate refuses any entry.txt longer than 200 characters, so refuse
+# to write rather than hand in an over-long text.
+assert len(HAIKU) <= 200, "haiku exceeds the 200-character gate"
+
 
 def main():
     out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
